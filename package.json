@@ -1,0 +1,19 @@
+{
+  "name": "angular-lightbox",
+  "version": "1.0.0",
+  "description": "A minimal lightbox directive for AngularJS.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abodelot/angular-lightbox.git"
+  },
+  "keywords": [
+    "angular",
+    "lightbox"
+  ],
+  "author": "Alexandre Bodelot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abodelot/angular-lightbox/issues"
+  },
+  "homepage": "https://github.com/abodelot/angular-lightbox"
+}

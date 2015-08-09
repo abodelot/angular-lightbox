@@ -1,0 +1,63 @@
+/* -----------------------------------------------
+ * angular-lightbox
+ * -----------------------------------------------
+ */
+
+.angular-lightbox-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  background-color: rgba(0, 0, 0, .8);
+  text-align: center;
+}
+span.angular-lightbox-inner {
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  min-width: 10em;
+  min-height: 8em;
+}
+span.angular-lightbox-inner > img {
+  vertical-align: bottom;
+}
+span.angular-lightbox-inner > a {
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 2em;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  position: absolute;
+  color: #ddd;
+}
+span.angular-lightbox-inner > a:hover {
+  color: white;
+}
+span.angular-lightbox-inner > a.previous,
+span.angular-lightbox-inner > a.next {
+  width: 2em;
+  height: 2em;
+  top: 50%;
+  margin-top: -1em; /* center vertically */
+}
+span.angular-lightbox-inner > a.previous {
+  left: 0;
+  margin-left: -2em;
+  border-radius: 0 2px 2px 0;
+}
+span.angular-lightbox-inner > a.next {
+  right: 0;
+  margin-right: -2em;
+  border-radius: 2px 0 0 2px;
+}
+span.angular-lightbox-inner > a.close {
+  top: -2em;
+  right: 0;
+  border-radius: 0 0 0 2px;
+}
+
