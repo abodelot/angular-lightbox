@@ -93,14 +93,11 @@ angular.module('angular-lightbox', [])
           inner[0].replaceChild(this, scope.image);
           scope.image = this;
           scope.dom.show();
-          var marginTop = ($(window).height() - this.height) / 2;
-          inner.css('margin-top', marginTop + 'px');
         }
         img.onerror = function() {
           inner[0].replaceChild(this, scope.image);
           scope.image = this;
-          var marginTop = ($(window).height() - inner.height()) / 2;
-          inner.css('margin-top', marginTop + 'px');
+          scope.dom.show();
         };
         img.title = (index + 1) + '/' + scope.images.length;
         img.src = scope.path; // Trigger image loading

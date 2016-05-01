@@ -4,24 +4,25 @@
  */
 
 .angular-lightbox-overlay {
-  width: 100%;
-  height: 100%;
   position: absolute;
+  width: 100%;
   top: 0;
+  bottom: 0;
   left: 0;
-  z-index: 5000;
+  z-index: 1000;
   background-color: rgba(0, 0, 0, .8);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 span.angular-lightbox-inner {
   position: relative;
-  display: inline-block;
-  background-color: white;
   min-width: 10em;
-  min-height: 8em;
+  min-height: 10em;
 }
 span.angular-lightbox-inner > img {
   vertical-align: bottom;
+  max-height: 90vh;
 }
 span.angular-lightbox-inner > a {
   font-family: sans-serif;
@@ -48,16 +49,13 @@ span.angular-lightbox-inner > a.next {
 span.angular-lightbox-inner > a.previous {
   left: 0;
   margin-left: -2em;
-  border-radius: 0 2px 2px 0;
 }
 span.angular-lightbox-inner > a.next {
   right: 0;
   margin-right: -2em;
-  border-radius: 2px 0 0 2px;
 }
 span.angular-lightbox-inner > a.close {
-  top: -2em;
+  top: -1.5em;
   right: 0;
-  border-radius: 0 0 0 2px;
 }
 
