@@ -50,13 +50,15 @@ angular.module('angular-lightbox', [])
         scope.image = dom.querySelector('img');
 
         // Find image matching clicked link
-        var index = scope.images.indexOf(clickedElement.href);
+        var index = scope.images.indexOf(clickedElement.getAttribute('href'));
 
         // Fallback to first image
         if (index == -1) {
           index = 0;
         }
         scope.loadImageAt(index);
+
+        document.addEventListener('keydown', scope.onKeyDown);
 
         // Previous image button
         dom.addEventListener('click', function(e) {
@@ -66,30 +68,41 @@ angular.module('angular-lightbox', [])
           } else if (e.target.classList.contains('next')) {
             scope.showNext();
           } else if (e.target.classList.contains('close')) {
-            dom.remove();
+            scope.closeLightbox();
           }
         });
+      };
 
-        // Handle keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
-          switch (e.which) {
-            case 37: // Left arrow
-              scope.showPrevious();
-              break;
-            case 39: // Right arow
-              scope.showNext();
-              break;
-            case 36: // Home
-              scope.loadImageAt(0);
-              break;
-            case 35: // End
-              scope.loadImageAt(scope.images.length - 1);
-              break;
-            case 27: // Escape
-              dom.remove();
-              break;
-          }
-        });
+      /**
+       * Remove lightbox from document, clean-up event listeners
+       */
+      scope.closeLightbox = function() {
+        document.removeEventListener('keydown', scope.onKeyDown);
+        scope.dom.remove();
+      };
+
+      /**
+       * Callback for keydown event: Handle keyboard navigation
+       */
+      scope.onKeyDown = function(event) {
+        console.log('toto')
+        switch (event.which) {
+          case 37: // Left arrow
+            scope.showPrevious();
+            break;
+          case 39: // Right arow
+            scope.showNext();
+            break;
+          case 36: // Home
+            scope.loadImageAt(0);
+            break;
+          case 35: // End
+            scope.loadImageAt(scope.images.length - 1);
+            break;
+          case 27: // Escape
+            scope.closeLightbox();
+            break;
+        }
       };
 
       /**
