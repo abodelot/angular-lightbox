@@ -1,17 +1,16 @@
 Angular Lightbox
 ----------------
 
-A minimal lightbox directive for AngularJS.
+A minimal lightbox directive for AngularJS. No dependencies!
 
-Check out the [demo page](http://rawgit.com/abodelot/angular-lightbox/master/demo.html)!
+Check out the [demo page](https://rawgit.com/abodelot/angular-lightbox/master/demo.html)!
 
 ## Installation
 
-Include the dependencies and the directive (Javascript and CSS) in your angular application:
+Include the directive (Javascript and CSS) in your angular application:
 
 ```html
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://code.angularjs.org/1.3.3/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.7.8/angular.min.js"></script>
 
 <script src="angular-lightbox/angular-lightbox.js"></script>
 <link type="text/css" rel="stylesheet" href="angular-lightbox/angular-lightbox.css" />
@@ -29,7 +28,7 @@ app.controller('MyController',  function($scope) {
 });
 ```
 
-In your view, declare the `lightbox` on any element, and use the `lightbox-trigger` class on any child element to trigger the lightbox opening.
+In your view, use the `lightbox` attribute on any element, and use the `lightbox-trigger` class on any child element to trigger the lightbox opening.
 
 Example:
 ```html
@@ -47,3 +46,7 @@ Example:
 - <kbd>Home</kbd>: First image
 - <kbd>End</kbd>: Last image
 - <kbd>Escap</kbd>: Close Lightbox
+
+## Dependencies
+
+- Angularjs >= 1.3
