@@ -1,7 +1,7 @@
 Angular Lightbox
 ----------------
 
-A minimal lightbox directive for AngularJS. No dependencies!
+A minimal lightbox directive for AngularJS. No other dependencies!
 
 Check out the [demo page](https://rawgit.com/abodelot/angular-lightbox/master/demo.html)!
 
@@ -18,25 +18,34 @@ Include the directive (Javascript and CSS) in your angular application:
 
 ## Usage
 
-Declare an array of image URLs:
+Declare an array of image URLs, or a single URL:
 
 ```js
 var app = angular.module('MyApp', ['angular-lightbox']);
 
 app.controller('MyController',  function($scope) {
   $scope.myImages = ['foobar.png', 'foobaz.jpg', 'barbaz.gif'];
+
+  $scope.imageUrl = 'foobar2.png';
 });
 ```
 
 In your view, use the `lightbox` attribute on any element, and use the `lightbox-trigger` class on any child element to trigger the lightbox opening.
 
-Example:
+Example for a list:
 ```html
 <ul lightbox="myImages">
   <li ng-repeat="image in myImages">
-    <a href="image" class="lightbox-trigger">{{image}}</a>
+    <a href="image" class="lightbox-trigger">{{ image }}</a>
   </li>
 </ul>
+```
+
+Example for a single image:
+```html
+<span lightbox="imageUrl">
+  <a href class="lightbox-trigger">link</a>
+</span>
 ```
 
 ## Keyboard shortcuts

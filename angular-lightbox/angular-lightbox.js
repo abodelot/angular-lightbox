@@ -2,7 +2,7 @@
  * Simple lightbox
  * Author: Alexandre Bodelot <alexandre.bodelot@gmail.com>
  * Usage:
- * <ANY lightbox="imageUrlArray">
+ * <ANY lightbox="imageUrlArray || imageUrl">
  *   <ANY href="imageUrl" class="lightbox-trigger"></ANY>
  * </ANY>
  */
@@ -11,9 +11,16 @@ angular.module('angular-lightbox', [])
   return{
     restrict: 'A',
     scope: {
-      images: '=lightbox'
+      lightbox: '=lightbox'
     },
     link: function(scope, element, attrs) {
+      // Ensure input is array
+      if (angular.isArray(scope.lightbox)) {
+        scope.images = scope.lightbox;
+      } else {
+        scope.images = [scope.lightbox];
+      }
+
       // Wait for child elements before performing querySelectorAll
       $timeout(function() {
         element[0].querySelectorAll('.lightbox-trigger').forEach(function(trigger) {
