@@ -7,13 +7,19 @@ Check out the [demo page](https://rawgit.com/abodelot/angular-lightbox/master/de
 
 ## Installation
 
-Include the directive (Javascript and CSS) in your angular application:
+This project is available as npm package `angularjs-lightbox`:
+
+```
+npm install angularjs-lightbox
+```
+
+Include the directive sources (Javascript and CSS) in your AngularJS application:
 
 ```html
 <script src="https://code.angularjs.org/1.7.8/angular.min.js"></script>
 
-<script src="angular-lightbox/angular-lightbox.js"></script>
-<link type="text/css" rel="stylesheet" href="angular-lightbox/angular-lightbox.css" />
+<script src="angularjs-lightbox/src/angular-lightbox.js"></script>
+<link type="text/css" rel="stylesheet" href="angularjs-lightbox/src/angular-lightbox.css">
 ```
 
 ## Usage
@@ -33,6 +39,7 @@ app.controller('MyController',  function($scope) {
 In your view, use the `lightbox` attribute on any element, and use the `lightbox-trigger` class on any child element to trigger the lightbox opening.
 
 Example for a list:
+
 ```html
 <ul lightbox="myImages">
   <li ng-repeat="image in myImages">
@@ -42,6 +49,7 @@ Example for a list:
 ```
 
 Example for a single image:
+
 ```html
 <span lightbox="imageUrl">
   <a href class="lightbox-trigger">link</a>
