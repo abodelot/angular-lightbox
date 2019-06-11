@@ -18,21 +18,21 @@ body {
   <body ng-controller="DemoController">
     <h1>Angular lightbox</h1>
 
-    <h2>Image array, unique link</h2>
+    <h2>Loop on image array, unique link</h2>
     <span lightbox="images">
       <a href class="lightbox-trigger">link</a>
     </span>
 
-    <h2>Image array, link for each element</h2>
+    <h2>Loop on image array, link for each element</h2>
     <ul lightbox="images">
       <li ng-repeat="image in images">
-        <a href="{{ image  }}" class="lightbox-trigger">{{ image }}</a>
+        <a ng-href="{{ image }}" class="lightbox-trigger">{{ image }}</a>
       </li>
     </ul>
 
     <h2>Single and very large image</h2>
     <span lightbox="largeImage">
-      <a ng-href="largeImage" class="lightbox-trigger">{{ largeImage }}</a>
+      <a ng-href="{{ largeImage }}" class="lightbox-trigger">{{ largeImage }}</a>
     </span>
   </body>
 </html>

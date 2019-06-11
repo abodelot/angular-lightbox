@@ -11,7 +11,7 @@ angular.module('angular-lightbox', [])
   return{
     restrict: 'A',
     scope: {
-      lightbox: '=lightbox'
+      lightbox: '<*'
     },
     link: function(scope, element, attrs) {
       // Ensure input is array
@@ -92,7 +92,6 @@ angular.module('angular-lightbox', [])
        * Callback for keydown event: Handle keyboard navigation
        */
       scope.onKeyDown = function(event) {
-        console.log('toto')
         switch (event.which) {
           case 37: // Left arrow
             scope.showPrevious();
