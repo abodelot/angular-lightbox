@@ -3,7 +3,7 @@
  * -----------------------------------------------
  */
 
-.angular-lightbox-overlay {
+div.angular-lightbox-overlay {
   position: fixed;
   width: 100%;
   top: 0;
@@ -23,39 +23,43 @@ span.angular-lightbox-inner {
 span.angular-lightbox-inner > img {
   vertical-align: bottom;
   max-height: 90vh;
+  max-width: 90vw;
 }
 span.angular-lightbox-inner > a {
   font-family: sans-serif;
-  font-size: 30px;
   font-weight: bold;
   display: inline-block;
-  line-height: 2em;
+  line-height: 100px;
   text-align: center;
   text-decoration: none;
   outline: 0;
   position: absolute;
-  color: #ddd;
+  color: #ccc;
 }
 span.angular-lightbox-inner > a:hover {
   color: white;
 }
 span.angular-lightbox-inner > a.previous,
 span.angular-lightbox-inner > a.next {
-  width: 2em;
-  height: 2em;
+  font-size: 60px;
+  width: 100px;
   top: 50%;
   margin-top: -1em; /* center vertically */
 }
 span.angular-lightbox-inner > a.previous {
   left: 0;
-  margin-left: -2em;
+  margin-left: -100px;
 }
 span.angular-lightbox-inner > a.next {
   right: 0;
-  margin-right: -2em;
+  margin-right: -100px;
 }
 span.angular-lightbox-inner > a.close {
-  top: -1.5em;
+  font-size: 40px;
+  top: -80px;
   right: 0;
 }
-
+div.angular-lightbox-overlay.single-image a.previous,
+div.angular-lightbox-overlay.single-image a.next {
+  display: none;
+}

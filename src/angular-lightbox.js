@@ -45,16 +45,21 @@ angular.module('angular-lightbox', [])
         var dom = angular.element(
         '<div class="angular-lightbox-overlay" style="display: none">' +
           '<span class="angular-lightbox-inner">' +
-            '<a href class="previous" title="Previous">«</a>' +
-            '<img src="" />' +
-            '<a href class="next" title="Next">»</a>' +
-            '<a href class="close" title="Close">×</a>' +
+            '<a href class="previous" title="Previous">&#8249;</a>' +
+            '<img src="">' +
+            '<a href class="next" title="Next">&#8250;</a>' +
+            '<a href class="close" title="Close">&times;</a>' +
           '</span>' +
         '</div>'
         )[0];
         scope.dom = dom;
         document.body.appendChild(dom);
         scope.image = dom.querySelector('img');
+
+        // Hide navigation buttons for single image
+        if (scope.images.length === 1) {
+          dom.classList.add('single-image');
+        }
 
         // Find image matching clicked link
         var index = scope.images.indexOf(clickedElement.getAttribute('href'));
