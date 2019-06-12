@@ -79,7 +79,9 @@ angular.module('angular-lightbox', [])
             scope.showPrevious();
           } else if (e.target.classList.contains('next')) {
             scope.showNext();
-          } else if (e.target.classList.contains('close')) {
+          } else if (e.target.classList.contains('close')
+            || e.target.classList.contains('angular-lightbox-overlay')) {
+            // Click on close or empty space
             scope.closeLightbox();
           }
         });
