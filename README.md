@@ -1,5 +1,8 @@
-Angular Lightbox
-----------------
+# AngularJS Lightbox
+
+![npm](https://img.shields.io/npm/v/angularjs-lightbox.svg)
+![npm](https://img.shields.io/npm/l/angularjs-lightbox.svg)
+![npm](https://img.shields.io/npm/dt/angularjs-lightbox.svg)
 
 A minimal lightbox directive for AngularJS. No other dependencies!
 
