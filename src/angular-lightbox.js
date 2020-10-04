@@ -7,7 +7,7 @@
  * </ANY>
  */
 angular.module('angular-lightbox', [])
-.directive('lightbox', function($timeout) {
+.directive('lightbox', ['$timeout', function($timeout) {
   return{
     restrict: 'A',
     scope: {
@@ -157,4 +157,4 @@ angular.module('angular-lightbox', [])
       };
     }
   };
-});
+}]);
